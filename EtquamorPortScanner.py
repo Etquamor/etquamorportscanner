@@ -50,7 +50,7 @@ def portEditor(portParameter, WellknownPorts = None, SelectPortrange = None, Por
         ports = portParameter
         
     elif Portlist == True:
-        ports = []                                     # We create list for add port in port list in future
+        ports = []                                     # Create list for add port in port list in future
         with open(portParameter,"r") as portListFile:  # Open port list file
             for port in portListFile.readlines():      # Read ports line by line
                 try:                                   # Check if your list be formed of integers
