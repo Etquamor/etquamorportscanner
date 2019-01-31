@@ -78,10 +78,12 @@ def scanPort(host,ports):
         except KeyboardInterrupt:                           # \
             print("\n[-] Pressed Ctrl+C\n\nQuitting...")    #  \--===> If user press Ctrl+C 
             time.sleep(1)                                   #  /--===> exit program
+            return False
         except OSError:           # If there is no router for host continue
             continue
         except OverflowError:
             print("\n[-] port must be in range 0-65535.\n")
+            return False
     # Calculate total scan time second type
     totalTime = str(time.time()-startTime).split(".", 1)[0]+"."+str(time.time()-startTime).split(".", 1)[1][0:3]
     printPort(host, openPorts, totalTime)
